@@ -1,0 +1,20 @@
+apply from: "${rootProject.projectDir.path}/config/gradle/base.gradle"
+
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "com.moowork.gradle:gradle-node-plugin:1.0.1"
+    }
+}
+
+apply plugin: com.moowork.gradle.node.NodePlugin
+
+node {
+    version = '6.9.2'
+    npmVersion = '3.10.9'
+    download = true
+}

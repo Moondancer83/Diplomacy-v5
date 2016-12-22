@@ -1,0 +1,10 @@
+group ProjectGroup
+version ProjetVersion
+
+apply plugin: 'base'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+
+task printVersion {
+    logger.lifecycle "Version: ${project.version}"
+}

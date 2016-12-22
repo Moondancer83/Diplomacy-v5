@@ -1,0 +1,27 @@
+apply from: "${rootProject.projectDir.path}/config/gradle/java/java.gradle"
+
+buildscript {
+    repositories {
+      jcenter {
+	url = "http://jcenter.bintray.com/"
+      }
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+    }
+}
+
+apply plugin: org.springframework.boot.gradle.plugin.SpringBootPlugin
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-actuator')
+    compile('org.springframework.boot:spring-boot-devtools')
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+bootRun {
+  // support passing -Dsystem.property=value to bootRun task
+  systemProperties = System.properties
+}

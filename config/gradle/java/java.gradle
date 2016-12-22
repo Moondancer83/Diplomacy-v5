@@ -1,0 +1,122 @@
+apply from: "${rootProject.projectDir.path}/config/gradle/base.gradle"
+
+// Java
+apply plugin: 'java'
+
+sourceCompatibility = TargetJavaVersion
+targetCompatibility = TargetJavaVersion
+
+logger.lifecycle "Project name: ${group}.${name}-${version}"
+
+// Code Quality
+apply plugin: 'checkstyle'
+apply plugin: 'findbugs'
+apply plugin: 'pmd'
+
+checkstyle {
+    configFile = rootProject.file('config/quality/checkstyle/checkstyle.xml')
+    configProperties.checkstyleConfigDir = configFile.parentFile
+}
+tasks.withType(Checkstyle) {
+    reports {
+        xml.enabled true
+        html.enabled true
+    }
+}
+
+findbugs {
+    excludeFilter = rootProject.file("config/quality/findbugs/findbugs-excludes.xml")
+}
+tasks.withType(FindBugs) {
+    reports {
+    if(System.getProperty("inCI") != null){
+      xml.enabled true
+      html.enabled false
+    } else {
+        xml.enabled false
+        html.enabled true
+    }
+  }
+}
+
+pmd {
+    ruleSetFiles = rootProject.files("config/quality/pmd/pmd.xml")
+}
+
+// Build
+
+jar {
+    baseName = project.name
+    version = parent.version
+}
+
+buildscript {
+    repositories {
+    maven {
+      url = "http://repo1.maven.org/maven2/"
+    }
+    jcenter {
+      url = "http://jcenter.bintray.com/"
+    }
+  }
+    dependencies {
+        classpath 'com.palantir:jacoco-coverage:0.4.0'
+        classpath "io.spring.gradle:dependency-management-plugin:0.6.1.RELEASE"
+    }
+}
+
+// Code coverage
+apply plugin: com.palantir.jacoco.JacocoCoveragePlugin
+
+jacocoTestReport {
+    afterEvaluate {
+        classDirectories = files(classDirectories.files.collect {
+            fileTree(
+                    dir: it,
+                    exclude: [
+                            '**/dto'    // Exclude DTO package from report
+                    ]
+            )
+
+        })
+    }
+}
+
+jacocoCoverage {
+    // Enforce minimum code coverage for every Java class.
+    //classThreshold 0.7, LINE
+    //classThreshold 1.0, BRANCH
+    // Class or package coverage?
+    //packageThreshold 0.7, LINE
+    //packageThreshold 1.0, BRANCH
+
+    // SpringBoot specific classes
+    //classThreshold 0.0, LINE, ~".*Application"
+    //packageThreshold 0.0, LINE, ~"base/package/[0-9a-zA-Z]*" // Configuration and main class
+}
+
+// Dependency management
+apply plugin: io.spring.gradle.dependencymanagement.DependencyManagementPlugin
+
+repositories {
+  maven {
+    url = "http://repo1.maven.org/maven2/"
+  }
+}
+
+// Defining versions of used libraries here
+// (With these configuration only version number is defined, dependency itself is not added)
+dependencyManagement {
+    imports {
+        // override included dependency versions in gradle.properties (e.g. logback, spring, spring-security)
+        mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+    }
+
+    dependencies {
+        dependency 'com.google.guava:guava:19.0'
+    }
+}
+
+tasks.withType(JavaCompile) {
+  options.compilerArgs << "-Xlint:unchecked"
+}
