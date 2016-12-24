@@ -1,0 +1,10 @@
+apply from: "${rootProject.projectDir.path}/config/gradle/java/spring_boot/spring_boot.gradle"
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+
+    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.6'
+
+    // DEVELOPMENT
+    compile("com.h2database:h2")
+}
