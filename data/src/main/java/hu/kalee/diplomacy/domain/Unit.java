@@ -27,6 +27,8 @@ public class Unit {
     @OneToOne
     @JoinColumn(name = "location_id")
     private Region location;
+    @OneToOne(mappedBy = "unit")
+    private Command command;
 
     public long getId() {
         return id;

@@ -116,3 +116,6 @@ INSERT INTO unit (name, type, owner_id, location_id) VALUES ('Royal Marines #2',
 INSERT INTO unit (name, type, owner_id, location_id) VALUES ('Royal Navy #3', 0, 2, 12);
 
 ## Commands
+# INSERT INTO command (unit_id, type, base_id, target_id, note) VALUES (1, 0,  5,  5, "Hold");
+# INSERT INTO command (unit_id, type, base_id, target_id, note) VALUES (2, 1,  9, 11, "Move");
+# INSERT INTO command (unit_id, type, base_id, target_id, note) VALUES (3, 0, 12, 12, "Hold");
