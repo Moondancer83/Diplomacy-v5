@@ -1,5 +1,7 @@
 package hu.kalee.diplomacy.domain;
 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
@@ -25,6 +28,8 @@ public class Region {
     @Column(columnDefinition = "boolean default false")
     private boolean isSupplyCenter;
     private RegionType type;
+    @ManyToMany
+    private List<Region> adjacent;
     @ManyToOne
     @JoinColumn(name = "core_id")
     private Nation core;
