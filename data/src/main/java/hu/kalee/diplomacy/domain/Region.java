@@ -1,5 +1,6 @@
 package hu.kalee.diplomacy.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -38,6 +39,10 @@ public class Region {
     private Nation owner;
     @OneToOne(mappedBy = "location", cascade = CascadeType.ALL)
     private Unit unit;
+
+    public Region() {
+        this.adjacent = new ArrayList<>();
+    }
 
     public long getId() {
         return id;
@@ -93,5 +98,15 @@ public class Region {
 
     public void setUnit(final Unit unit) {
         this.unit = unit;
+    }
+
+
+    public List<Region> getAdjacent() {
+
+        return adjacent;
+    }
+
+    public void setAdjacent(final List<Region> adjacent) {
+        this.adjacent = adjacent;
     }
 }
