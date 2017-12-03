@@ -1,4 +1,4 @@
-package hu.kalee.diplomacy.order;
+package diplomacy.order;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -10,7 +10,8 @@ import hu.kalee.diplomacy.domain.Region;
 import hu.kalee.diplomacy.domain.RegionType;
 import hu.kalee.diplomacy.domain.Unit;
 import hu.kalee.diplomacy.domain.UnitType;
-import static org.junit.Assert.*;
+import hu.kalee.diplomacy.order.CommandLogic;
+import hu.kalee.diplomacy.order.TransportLogic;
 
 /**
  * TransportLogicTest.
@@ -35,7 +36,7 @@ public class TransportLogicTest {
     public void testCheckShouldReturnTrueWhen() {
         // GIVEN
         final Region coast = new Region();
-        coast.setType(RegionType.COASTAL);
+        coast.setType(RegionType.SEA);
         final Region base = new Region();
         base.setType(RegionType.COASTAL);
         final Region target = new Region();

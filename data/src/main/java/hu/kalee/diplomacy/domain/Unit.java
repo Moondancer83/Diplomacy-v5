@@ -69,4 +69,12 @@ public class Unit {
     public void setLocation(final Region location) {
         this.location = location;
     }
+
+    public Command getCommand() {
+        return command;
+    }
+
+    public void setCommand(final Command command) {
+        this.command = command;
+    }
 }

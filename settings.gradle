@@ -1,5 +1,4 @@
 rootProject.name = 'Diplomacy'
 
 include 'data'
-include 'logic'
 

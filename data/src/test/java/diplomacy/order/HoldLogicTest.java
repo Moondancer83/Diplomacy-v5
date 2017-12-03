@@ -1,4 +1,4 @@
-package hu.kalee.diplomacy.order;
+package diplomacy.order;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -6,7 +6,8 @@ import org.junit.Test;
 
 import hu.kalee.diplomacy.domain.Command;
 import hu.kalee.diplomacy.domain.CommandType;
-import static org.junit.Assert.*;
+import hu.kalee.diplomacy.order.CommandLogic;
+import hu.kalee.diplomacy.order.HoldLogic;
 
 /**
  * HoldLogicTest.
