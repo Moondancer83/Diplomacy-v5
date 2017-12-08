@@ -10,4 +10,8 @@ dependencies {
 
     // DEVELOPMENT
     compile("com.h2database:h2")
+
+    // https://mvnrepository.com/artifact/org.assertj/assertj-core
+    testCompile group: 'org.assertj', name: 'assertj-core', version: '3.8.0'
+
 }

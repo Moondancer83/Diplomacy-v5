@@ -6,12 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.google.common.collect.Lists;
-
-import hu.kalee.diplomacy.logic.converter.CommandEntityToViewDTOConverter;
-import hu.kalee.diplomacy.data.domain.Command;
 import hu.kalee.diplomacy.logic.dto.CommandViewDTO;
-import hu.kalee.diplomacy.data.repository.CommandRepository;
+import hu.kalee.diplomacy.logic.facade.CommandFacade;
 
 /**
  * CommandController.
@@ -22,12 +18,10 @@ import hu.kalee.diplomacy.data.repository.CommandRepository;
 @RestController
 public class CommandController {
     @Autowired
-    private CommandRepository repository;
-    @Autowired
-    private CommandEntityToViewDTOConverter converter;
+    private CommandFacade facade;
 
     @RequestMapping(value = "commands")
     public List<CommandViewDTO> commands() {
-        return Lists.transform((List<Command>) repository.findAll(), converter::convert);
+        return facade.getCommands();
     }
 }
