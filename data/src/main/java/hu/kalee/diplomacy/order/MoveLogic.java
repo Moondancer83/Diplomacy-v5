@@ -20,15 +20,9 @@ public class MoveLogic extends AbstractCommandLogic implements CommandLogic {
     }
 
     private boolean check(Unit unit, Region destination) {
-
-        boolean result = false;
-        if (unit != null && destination != null) {
-            result = isAdjacent(unit, destination)
+        return isAdjacent(unit, destination)
                     && isValidForUnitType(unit, destination)
                     && isTargetOccupied(destination);
-        }
-
-        return result;
     }
 
     private boolean isAdjacent(final Unit unit, final Region destination) {

@@ -13,14 +13,9 @@ import hu.kalee.diplomacy.domain.UnitType;
 public class SupportLogic extends AbstractCommandLogic implements CommandLogic {
     @Override
     protected boolean specificChecks(final Command command) {
-        return precheck(command)
-                && isTargetValidForUnit(command)
+        return isTargetValidForUnit(command)
                 && hasBaseAUnit(command)
                 && isSupportedUnitTargetingTarget(command);
-    }
-
-    private boolean precheck(final Command command) {
-        return command.getUnit() != null && command.getBase() != null && command.getTarget() != null;
     }
 
     private boolean isTargetValidForUnit(final Command command) {

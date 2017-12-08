@@ -13,15 +13,10 @@ import hu.kalee.diplomacy.domain.UnitType;
 public class TransportLogic extends AbstractCommandLogic implements CommandLogic {
     @Override
     protected boolean specificChecks(final Command command) {
-        return precheck(command)
-                && isCapableOfTransporting(command)
+        return isCapableOfTransporting(command)
                 && areBaseAndTargetReachable(command)
                 && isTargetValidForTransportee(command)
                 && isTargetUnoccupied(command);
-    }
-
-    private boolean precheck(final Command command) {
-        return command.getUnit() != null && command.getBase() != null && command.getTarget() != null;
     }
 
     private boolean isCapableOfTransporting(final Command command) {

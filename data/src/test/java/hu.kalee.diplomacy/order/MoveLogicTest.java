@@ -1,4 +1,4 @@
-package diplomacy.order;
+package hu.kalee.diplomacy.order;
 
 import org.junit.Assert;
 import org.junit.Before;

@@ -1,4 +1,4 @@
-package diplomacy.order;
+package hu.kalee.diplomacy.order;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -35,19 +35,19 @@ public class SupportLogicTest {
     @Test
     public void test() {
         // GIVEN
-        final Region coast = new Region();
-        coast.setType(RegionType.SEA);
+        final Region location = new Region();
+        location.setType(RegionType.SEA);
         final Region base = new Region();
         base.setType(RegionType.COASTAL);
         final Region target = new Region();
         target.setType(RegionType.COASTAL);
 
-        coast.getAdjacent().add(base);
-        coast.getAdjacent().add(target);
+        location.getAdjacent().add(base);
+        location.getAdjacent().add(target);
 
         Unit supporter = new Unit();
         supporter.setType(UnitType.NAVY);
-        supporter.setLocation(coast);
+        supporter.setLocation(location);
 
         Unit supported = new Unit();
         supported.setType(UnitType.ARMY);
@@ -55,7 +55,7 @@ public class SupportLogicTest {
         base.setUnit(supported);
 
         Command transportCommand = new Command();
-        transportCommand.setType(CommandType.TRANSPORT);
+        transportCommand.setType(CommandType.SUPPORT);
         transportCommand.setUnit(supporter);
         transportCommand.setBase(base);
         transportCommand.setTarget(target);
