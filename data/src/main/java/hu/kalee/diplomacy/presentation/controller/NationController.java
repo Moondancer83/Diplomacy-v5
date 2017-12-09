@@ -9,12 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.google.common.collect.Lists;
-
-import hu.kalee.diplomacy.logic.converter.NationEntityToViewDTOConverter;
-import hu.kalee.diplomacy.data.domain.Nation;
 import hu.kalee.diplomacy.logic.dto.NationViewDTO;
-import hu.kalee.diplomacy.data.repository.NationRepository;
+import hu.kalee.diplomacy.logic.facade.NationFacade;
 
 /**
  * MapController.
@@ -25,12 +21,10 @@ import hu.kalee.diplomacy.data.repository.NationRepository;
 @RestController
 public class NationController {
     @Autowired
-    private NationRepository repository;
-    @Autowired
-    private NationEntityToViewDTOConverter converter;
+    private NationFacade facade;
 
     @RequestMapping(value = "nations", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public List<NationViewDTO> map() {
-        return Lists.transform((List<Nation>) repository.findAll(), converter::convert);
+    public List<NationViewDTO> nations() {
+        return facade.getNations();
     }
 }
