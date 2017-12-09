@@ -23,12 +23,12 @@ import hu.kalee.diplomacy.data.repository.UnitRepository;
 @RestController
 public class UnitController {
     @Autowired
-    private UnitRepository repository;
+    private UnitRepository unitRepository;
     @Autowired
-    private UnitEntityToViewDTOConverter converter;
+    private UnitEntityToViewDTOConverter unitEntityToViewDTOConverter;
 
     @RequestMapping(value = "units", method = RequestMethod.GET)
     public List<UnitViewDTO> getUnits() {
-        return Lists.transform((List<Unit>) repository.findAll(), converter::convert);
+        return Lists.transform((List<Unit>) unitRepository.findAll(), unitEntityToViewDTOConverter::convert);
     }
 }

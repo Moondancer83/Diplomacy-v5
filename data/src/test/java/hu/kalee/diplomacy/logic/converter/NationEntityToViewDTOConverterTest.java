@@ -57,6 +57,7 @@ public class NationEntityToViewDTOConverterTest {
         final NationViewDTO expected = new NationViewDTO();
         expected.setId(1);
         expected.setName("Nation");
+        expected.setCores(Collections.singletonList(2L));
         expected.setRegions(Collections.singletonList(3L));
         expected.setUnits(Collections.singletonList(4L));
 

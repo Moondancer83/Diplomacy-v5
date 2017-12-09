@@ -13,6 +13,15 @@ public class NationViewDTO {
     private String name;
     private List<Long> regions;
     private List<Long> units;
+    private List<Long> cores;
+
+    public List<Long> getCores() {
+        return cores;
+    }
+
+    public void setCores(final List<Long> cores) {
+        this.cores = cores;
+    }
 
     public long getId() {
         return id;

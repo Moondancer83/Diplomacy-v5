@@ -26,21 +26,30 @@ public class NationEntityToViewDTOConverter implements Converter<Nation, NationV
     private UnitEntityToViewDTOConverter unitConverter;
 
     @Override
-    public NationViewDTO convert(final Nation s) {
-        NationViewDTO r = null;
-        if (s != null) {
-            r = new NationViewDTO();
-            r.setId(s.getId());
-            r.setName(s.getName());
-            r.setRegions(getRegionIds(s));
-            r.setUnits(getUnitIds(s));
+    public NationViewDTO convert(final Nation source) {
+        NationViewDTO result = null;
+        if (source != null) {
+            result = new NationViewDTO();
+            result.setId(source.getId());
+            result.setName(source.getName());
+            result.setRegions(getRegionIds(source));
+            result.setCores(getCoreIds(source));
+            result.setUnits(getUnitIds(source));
         }
-        return r;
+        return result;
     }
 
     private List<Long> getRegionIds(final Nation s) {
         final List<Long> ids = new ArrayList<>();
         for (Region reg : s.getRegions()) {
+            ids.add(reg.getId());
+        }
+        return ids;
+    }
+
+    private List<Long> getCoreIds(final Nation s) {
+        final List<Long> ids = new ArrayList<>();
+        for (Region reg : s.getCores()) {
             ids.add(reg.getId());
         }
         return ids;

@@ -3,7 +3,7 @@ package hu.kalee.diplomacy.logic.facade;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.Assert;
+import org.assertj.core.api.Assertions;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,9 +16,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 import hu.kalee.diplomacy.data.domain.Nation;
 import hu.kalee.diplomacy.data.repository.NationRepository;
 import hu.kalee.diplomacy.logic.converter.NationEntityToViewDTOConverter;
-import hu.kalee.diplomacy.logic.dto.CommandViewDTO;
 import hu.kalee.diplomacy.logic.dto.NationViewDTO;
-import static org.junit.Assert.*;
 
 /**
  * NationFacadeTest.
@@ -52,6 +50,6 @@ public class NationFacadeTest {
     @Test
     public void testGetNationsShouldCallConvertFromConverter() {
         List<NationViewDTO> actual = underTest.getNations();
-        Assert.assertEquals(1, actual.size());
+        Assertions.assertThat(actual).hasSize(1);
     }
 }
