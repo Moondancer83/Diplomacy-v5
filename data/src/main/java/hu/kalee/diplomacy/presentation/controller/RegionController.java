@@ -12,6 +12,7 @@ import hu.kalee.diplomacy.logic.converter.RegionEntityToViewDTOConverter;
 import hu.kalee.diplomacy.data.domain.Region;
 import hu.kalee.diplomacy.logic.dto.RegionViewDTO;
 import hu.kalee.diplomacy.data.repository.RegionRepository;
+import hu.kalee.diplomacy.logic.facade.RegionFacade;
 
 /**
  * RegionController.
@@ -22,12 +23,10 @@ import hu.kalee.diplomacy.data.repository.RegionRepository;
 @RestController
 public class RegionController {
     @Autowired
-    private RegionRepository repository;
-    @Autowired
-    RegionEntityToViewDTOConverter converter;
+    private RegionFacade facade;
 
     @RequestMapping(value = "regions")
     public List<RegionViewDTO> regions() {
-        return Lists.transform((List<Region>)repository.findAll(), converter::convert);
+        return facade.getRegions();
     }
 }
