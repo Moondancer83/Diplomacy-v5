@@ -22,7 +22,7 @@ public class UnitController {
     private UnitFacade facade;
 
     @RequestMapping(value = "units", method = RequestMethod.GET)
-    public List<UnitViewDTO> getUnits() {
+    public List<UnitViewDTO> units() {
         return facade.getUnits();
     }
 }

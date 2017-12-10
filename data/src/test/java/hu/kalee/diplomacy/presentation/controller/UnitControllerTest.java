@@ -24,7 +24,7 @@ public class UnitControllerTest {
 
     @Test
     public void testUnitsShouldCallGetUnitsFromFacade() {
-        underTest.getUnits();
+        underTest.units();
         Mockito.verify(facade).getUnits();
     }
 }
