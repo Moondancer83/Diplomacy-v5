@@ -7,12 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.google.common.collect.Lists;
-
-import hu.kalee.diplomacy.logic.converter.UnitEntityToViewDTOConverter;
 import hu.kalee.diplomacy.logic.dto.UnitViewDTO;
-import hu.kalee.diplomacy.data.domain.Unit;
-import hu.kalee.diplomacy.data.repository.UnitRepository;
 import hu.kalee.diplomacy.logic.facade.UnitFacade;
 
 /**
