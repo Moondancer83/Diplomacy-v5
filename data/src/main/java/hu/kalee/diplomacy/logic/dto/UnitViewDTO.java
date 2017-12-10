@@ -12,6 +12,8 @@ public class UnitViewDTO {
     private long id;
     private String name;
     private UnitType type;
+    private Long location;
+    private Long command;
     private long owner;
 
     public long getId() {
@@ -54,14 +56,12 @@ public class UnitViewDTO {
         this.location = location;
     }
 
-    public CommandViewDTO getCommand() {
+    public Long getCommand() {
         return command;
     }
 
-    public void setCommand(final CommandViewDTO command) {
+    public void setCommand(final Long command) {
         this.command = command;
     }
 
-    private long location;
-    private CommandViewDTO command;
 }

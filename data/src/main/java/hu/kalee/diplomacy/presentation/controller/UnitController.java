@@ -13,6 +13,7 @@ import hu.kalee.diplomacy.logic.converter.UnitEntityToViewDTOConverter;
 import hu.kalee.diplomacy.logic.dto.UnitViewDTO;
 import hu.kalee.diplomacy.data.domain.Unit;
 import hu.kalee.diplomacy.data.repository.UnitRepository;
+import hu.kalee.diplomacy.logic.facade.UnitFacade;
 
 /**
  * UnitController.
@@ -23,12 +24,10 @@ import hu.kalee.diplomacy.data.repository.UnitRepository;
 @RestController
 public class UnitController {
     @Autowired
-    private UnitRepository unitRepository;
-    @Autowired
-    private UnitEntityToViewDTOConverter unitEntityToViewDTOConverter;
+    private UnitFacade facade;
 
     @RequestMapping(value = "units", method = RequestMethod.GET)
     public List<UnitViewDTO> getUnits() {
-        return Lists.transform((List<Unit>) unitRepository.findAll(), unitEntityToViewDTOConverter::convert);
+        return facade.getUnits();
     }
 }

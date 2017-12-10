@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
+import hu.kalee.diplomacy.data.domain.Command;
 import hu.kalee.diplomacy.logic.dto.UnitViewDTO;
 import hu.kalee.diplomacy.data.domain.Unit;
 
@@ -28,7 +29,7 @@ public class UnitEntityToViewDTOConverter implements Converter<Unit, UnitViewDTO
             result.setType(source.getType());
             result.setLocation(source.getLocation().getId());
             result.setOwner(source.getOwner().getId());
-            result.setCommand(converter.convert(source.getCommand()));
+            result.setCommand(source.getCommand().getId());
         }
         return result;
     }
