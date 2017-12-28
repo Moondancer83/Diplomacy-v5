@@ -2,3 +2,5 @@ task wrapper(type: Wrapper) {
     gradleVersion = gradleWrapperVersion
     distributionUrl = "http://services.gradle.org/distributions/gradle-${gradleVersion}-bin.zip"
 }
+
+apply plugin: 'java'
