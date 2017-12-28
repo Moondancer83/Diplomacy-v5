@@ -1,6 +1,5 @@
 package hu.kalee.diplomacy.logic.converter;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
@@ -15,8 +14,6 @@ import hu.kalee.diplomacy.logic.dto.UnitViewDTO;
  */
 @Component
 public class UnitEntityToViewDTOConverter implements Converter<Unit, UnitViewDTO> {
-    @Autowired
-    private CommandEntityToViewDTOConverter converter;
 
     @Override
     public UnitViewDTO convert(final Unit source) {

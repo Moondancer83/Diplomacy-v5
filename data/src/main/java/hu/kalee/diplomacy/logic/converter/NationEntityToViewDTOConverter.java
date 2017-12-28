@@ -3,7 +3,6 @@ package hu.kalee.diplomacy.logic.converter;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
@@ -20,10 +19,6 @@ import hu.kalee.diplomacy.logic.dto.NationViewDTO;
  */
 @Component
 public class NationEntityToViewDTOConverter implements Converter<Nation, NationViewDTO> {
-    @Autowired
-    private RegionEntityToViewDTOConverter regionConverter;
-    @Autowired
-    private UnitEntityToViewDTOConverter unitConverter;
 
     @Override
     public NationViewDTO convert(final Nation source) {
