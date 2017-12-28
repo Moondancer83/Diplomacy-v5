@@ -10,7 +10,6 @@ import hu.kalee.diplomacy.data.domain.Region;
 import hu.kalee.diplomacy.data.domain.Unit;
 import hu.kalee.diplomacy.data.domain.UnitType;
 import hu.kalee.diplomacy.logic.dto.UnitViewDTO;
-import static org.junit.Assert.*;
 
 /**
  * UnitEntityToViewDTOConverterTest.
@@ -22,12 +21,12 @@ public class UnitEntityToViewDTOConverterTest {
     private UnitEntityToViewDTOConverter underTest;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         underTest = new UnitEntityToViewDTOConverter();
     }
 
     @Test
-    public void testConvertShouldReturnNullOnNull() throws Exception {
+    public void testConvertShouldReturnNullOnNull() {
         // GIVEN
         // WHEN
         UnitViewDTO actual = underTest.convert(null);
@@ -36,7 +35,7 @@ public class UnitEntityToViewDTOConverterTest {
     }
 
     @Test
-    public void testConvertShouldConvertAllFields() throws Exception {
+    public void testConvertShouldConvertAllFields() {
         // GIVEN
         final Unit source = new Unit();
         source.setId(1);

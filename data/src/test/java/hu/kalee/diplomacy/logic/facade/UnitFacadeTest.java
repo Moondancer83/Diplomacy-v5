@@ -51,7 +51,7 @@ public class UnitFacadeTest {
     }
 
     @Test
-    public void testGetUnitsShouldCallConvert() throws Exception {
+    public void testGetUnitsShouldCallConvert() {
         // GIVEN
         // WHEN
         List<UnitViewDTO> actual = underTest.getUnits();

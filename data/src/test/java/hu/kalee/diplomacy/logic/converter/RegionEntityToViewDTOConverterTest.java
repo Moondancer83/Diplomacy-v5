@@ -24,7 +24,7 @@ public class RegionEntityToViewDTOConverterTest {
     private RegionEntityToViewDTOConverter underTest;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         underTest = new RegionEntityToViewDTOConverter();
     }
 

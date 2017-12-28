@@ -21,7 +21,7 @@ public class CommandEntityToViewDTOConverterTest {
     private CommandEntityToViewDTOConverter underTest;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         underTest = new CommandEntityToViewDTOConverter();
     }
 

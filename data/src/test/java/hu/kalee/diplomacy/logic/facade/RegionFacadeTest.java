@@ -34,7 +34,7 @@ public class RegionFacadeTest {
     private RegionEntityToViewDTOConverter converter;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         final List<Region> regions = new ArrayList<>();
         regions.add(new Region());
         Mockito.when(repository.findAll()).thenReturn(regions);
@@ -42,7 +42,7 @@ public class RegionFacadeTest {
     }
 
     @Test
-    public void testGetRegionsShouldCallFindAllFronRepository() throws Exception {
+    public void testGetRegionsShouldCallFindAllFronRepository() {
         // GIVEN
         // WHEN
         underTest.getRegions();
@@ -52,7 +52,7 @@ public class RegionFacadeTest {
     }
 
     @Test
-    public void testGetRegionsShouldCallConvert() throws Exception {
+    public void testGetRegionsShouldCallConvert() {
         // GIVEN
         // WHEN
         List<RegionViewDTO> actual = underTest.getRegions();
