@@ -1,7 +1,6 @@
 package hu.kalee.diplomacy.logic.converter;
 
 import org.assertj.core.api.Assertions;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -10,7 +9,6 @@ import hu.kalee.diplomacy.data.domain.CommandType;
 import hu.kalee.diplomacy.data.domain.Region;
 import hu.kalee.diplomacy.data.domain.Unit;
 import hu.kalee.diplomacy.logic.dto.CommandViewDTO;
-import static org.junit.Assert.*;
 
 /**
  * CommandEntityToViewDTOConverterTest.

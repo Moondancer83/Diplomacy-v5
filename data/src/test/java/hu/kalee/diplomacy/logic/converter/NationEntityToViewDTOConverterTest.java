@@ -64,5 +64,4 @@ public class NationEntityToViewDTOConverterTest {
         final NationViewDTO actual = underTest.convert(source);
         Assertions.assertThat(actual).isEqualToComparingFieldByField(expected);
     }
-
 }

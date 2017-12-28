@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
-import hu.kalee.diplomacy.logic.dto.RegionViewDTO;
 import hu.kalee.diplomacy.data.domain.Region;
+import hu.kalee.diplomacy.logic.dto.RegionViewDTO;
 
 /**
  * RegionEntityToViewDTOConverter.

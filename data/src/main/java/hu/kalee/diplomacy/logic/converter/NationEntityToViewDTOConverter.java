@@ -7,10 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
-import hu.kalee.diplomacy.logic.dto.NationViewDTO;
 import hu.kalee.diplomacy.data.domain.Nation;
 import hu.kalee.diplomacy.data.domain.Region;
 import hu.kalee.diplomacy.data.domain.Unit;
+import hu.kalee.diplomacy.logic.dto.NationViewDTO;
 
 /**
  * NationEntityToViewDTOConverter.

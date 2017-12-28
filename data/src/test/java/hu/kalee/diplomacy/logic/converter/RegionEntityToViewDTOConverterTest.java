@@ -12,9 +12,7 @@ import hu.kalee.diplomacy.data.domain.Nation;
 import hu.kalee.diplomacy.data.domain.Region;
 import hu.kalee.diplomacy.data.domain.RegionType;
 import hu.kalee.diplomacy.data.domain.Unit;
-import hu.kalee.diplomacy.logic.dto.NationViewDTO;
 import hu.kalee.diplomacy.logic.dto.RegionViewDTO;
-import static org.junit.Assert.*;
 
 /**
  * RegionEntityToViewDTOConverterTest.

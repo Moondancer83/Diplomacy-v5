@@ -27,6 +27,7 @@ public class MoveLogicTest {
     @Test
     public void testCheckShouldReturnFalseWhenNoCommandIsGiven() {
         boolean actual = underTest.check(null);
+        Assert.assertFalse(actual);
     }
 
     @Test

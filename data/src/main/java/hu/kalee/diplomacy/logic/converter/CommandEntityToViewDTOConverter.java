@@ -3,8 +3,8 @@ package hu.kalee.diplomacy.logic.converter;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
-import hu.kalee.diplomacy.logic.dto.CommandViewDTO;
 import hu.kalee.diplomacy.data.domain.Command;
+import hu.kalee.diplomacy.logic.dto.CommandViewDTO;
 
 /**
  * CommandEntityToViewDTOConverter.

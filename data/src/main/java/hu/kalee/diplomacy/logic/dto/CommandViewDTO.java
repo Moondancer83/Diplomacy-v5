@@ -13,6 +13,8 @@ public class CommandViewDTO {
     private long unit;
     private CommandType type;
     private long base;
+    private long target;
+    private String note;
 
     public long getId() {
         return id;
@@ -62,6 +64,4 @@ public class CommandViewDTO {
         this.note = note;
     }
 
-    private long target;
-    private String note;
 }

@@ -13,12 +13,10 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import hu.kalee.diplomacy.data.domain.Nation;
 import hu.kalee.diplomacy.data.domain.Region;
 import hu.kalee.diplomacy.data.repository.RegionRepository;
 import hu.kalee.diplomacy.logic.converter.RegionEntityToViewDTOConverter;
 import hu.kalee.diplomacy.logic.dto.RegionViewDTO;
-import static org.junit.Assert.*;
 
 /**
  * RegionFacadeTest.

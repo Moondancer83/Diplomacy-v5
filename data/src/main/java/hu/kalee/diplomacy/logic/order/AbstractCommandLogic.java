@@ -1,5 +1,7 @@
 package hu.kalee.diplomacy.logic.order;
 
+import org.springframework.stereotype.Component;
+
 import hu.kalee.diplomacy.data.domain.Command;
 
 /**
@@ -8,10 +10,10 @@ import hu.kalee.diplomacy.data.domain.Command;
  * @author mkalinovits
  * @since 2017. 12. 02.
  */
-public abstract class AbstractCommandLogic implements CommandLogic{
+@Component
+public abstract class AbstractCommandLogic implements CommandLogic {
     @Override
     public final boolean check(final Command command) {
-
         return command != null && precheck(command) && specificChecks(command);
     }
 

@@ -23,7 +23,7 @@ public class RegionFacade {
     @Autowired
     private RegionRepository regionRepository;
     @Autowired
-    RegionEntityToViewDTOConverter regionEntityToViewDTOConverter;
+    private RegionEntityToViewDTOConverter regionEntityToViewDTOConverter;
 
     public List<RegionViewDTO> getRegions() {
         return Lists.transform((List<Region>) regionRepository.findAll(), regionEntityToViewDTOConverter::convert);

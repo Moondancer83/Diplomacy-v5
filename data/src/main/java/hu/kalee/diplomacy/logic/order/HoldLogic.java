@@ -1,5 +1,7 @@
 package hu.kalee.diplomacy.logic.order;
 
+import org.springframework.stereotype.Component;
+
 import hu.kalee.diplomacy.data.domain.Command;
 
 /**
@@ -8,6 +10,7 @@ import hu.kalee.diplomacy.data.domain.Command;
  * @author mkalinovits
  * @since 2017. 12. 02.
  */
+@Component
 public class HoldLogic extends AbstractCommandLogic implements CommandLogic {
 
     @Override

@@ -12,15 +12,11 @@ import org.mockito.Matchers;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
-import org.springframework.beans.factory.annotation.Autowired;
 
-import hu.kalee.diplomacy.data.domain.Region;
 import hu.kalee.diplomacy.data.domain.Unit;
 import hu.kalee.diplomacy.data.repository.UnitRepository;
 import hu.kalee.diplomacy.logic.converter.UnitEntityToViewDTOConverter;
-import hu.kalee.diplomacy.logic.dto.RegionViewDTO;
 import hu.kalee.diplomacy.logic.dto.UnitViewDTO;
-import static org.junit.Assert.*;
 
 /**
  * UnitFacadeTest.

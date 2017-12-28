@@ -1,5 +1,7 @@
 package hu.kalee.diplomacy.logic.order;
 
+import org.springframework.stereotype.Component;
+
 import hu.kalee.diplomacy.data.domain.Command;
 import hu.kalee.diplomacy.data.domain.Region;
 import hu.kalee.diplomacy.data.domain.RegionType;
@@ -12,6 +14,7 @@ import hu.kalee.diplomacy.data.domain.UnitType;
  * @author mkalinovits
  * @since 2017. 12. 01.
  */
+@Component
 public class MoveLogic extends AbstractCommandLogic implements CommandLogic {
 
     @Override
@@ -19,10 +22,9 @@ public class MoveLogic extends AbstractCommandLogic implements CommandLogic {
         return check(command.getUnit(), command.getTarget());
     }
 
-    private boolean check(Unit unit, Region destination) {
+    private boolean check(final Unit unit, final Region destination) {
         return isAdjacent(unit, destination)
-                    && isValidForUnitType(unit, destination)
-                    && isTargetOccupied(destination);
+                    && isValidForUnitType(unit, destination);
     }
 
     private boolean isAdjacent(final Unit unit, final Region destination) {
@@ -45,10 +47,4 @@ public class MoveLogic extends AbstractCommandLogic implements CommandLogic {
                     && (destination.getType() == RegionType.LAND
                     || destination.getType() == RegionType.COASTAL);
     }
-
-    private boolean isTargetOccupied(final Region destination) {
-        return destination.getUnit() == null;
-    }
-
-
 }
