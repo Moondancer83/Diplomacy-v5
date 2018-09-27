@@ -15,3 +15,9 @@ hs_err_pid*
 # gradle
 /.gradle/
 !/gradle/wrapper/gradle-wrapper.jar
+
+# IntelliJ
+*.iml
+
+# NodeJS
+node_modules/
