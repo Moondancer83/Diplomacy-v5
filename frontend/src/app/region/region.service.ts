@@ -1,8 +1,8 @@
 import { Observable} from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 
-import {Region} from './region';
-import {Injectable} from '@angular/core';
+import { Region } from './region';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Access-Control-Allow-Origin': '*' })
