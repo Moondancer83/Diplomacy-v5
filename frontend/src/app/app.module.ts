@@ -13,6 +13,7 @@ import { UnitComponent } from './unit/unit.component';
 import { CommandComponent } from './command/command.component';
 import { RegionService } from './region/region.service';
 import { NationService } from './nation/nation.service';
+import {UnitService} from './unit/unit.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { NationService } from './nation/nation.service';
   ],
   providers: [
     RegionService,
-    NationService
+    NationService,
+    UnitService
   ],
   bootstrap: [AppComponent]
 })
