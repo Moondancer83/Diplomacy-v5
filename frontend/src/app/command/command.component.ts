@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Command} from './command';
+import {CommandService} from './command.service';
 
 @Component({
   selector: 'app-command',
@@ -7,11 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommandComponent implements OnInit {
   title: String = 'Commands';
-  commands: String[] = [''];
+  commands: Command[];
 
-  constructor() { }
+  constructor(private service: CommandService) { }
 
   ngOnInit() {
+    this.getCommands();
   }
 
+  private getCommands() {
+    this.service.getCommands().subscribe(c => this.commands = c);
+  }
+
+  commandDescription(command: Command): String {
+    return Command.getDescription(command);
+  }
 }
