@@ -1,9 +1,12 @@
 <mat-toolbar>
+  <i class="material-icons" (click)="sidenav.toggle()">
+    help_outline
+  </i>
   <span>Diplomacy</span>
 </mat-toolbar>
 
 <mat-sidenav-container>
-  <mat-sidenav mode="side" opened>
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')" (closed)="events.push('close!')">
     <app-region></app-region>
     <app-nation></app-nation>
     <app-unit></app-unit>
@@ -11,3 +14,5 @@
   </mat-sidenav>
   <mat-sidenav-content>Main content</mat-sidenav-content>
 </mat-sidenav-container>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">

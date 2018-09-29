@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommandComponent implements OnInit {
   title: String = 'Commands';
-  commands: String[] = [""];
+  commands: String[] = [''];
 
   constructor() { }
 
