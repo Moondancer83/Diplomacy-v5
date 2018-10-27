@@ -19,7 +19,7 @@ test("AuthenticationSaga.login should call authenticationResources.login", () =>
     type: "ACTION_TYPE",
     payload: {
       username: "USER", // NOSONAR
-      password: "PASS"  // NOSONAR
+      password: "PASS" // NOSONAR
     },
     error: undefined,
     meta: undefined
@@ -37,7 +37,7 @@ test("AuthenticationSaga.login should put LOGIN_SUCCESS into store", () => {
     type: "ACTION_TYPE",
     payload: {
       username: "USER", // NOSONAR
-      password: "PASS"  // NOSONAR
+      password: "PASS" // NOSONAR
     },
     error: undefined,
     meta: undefined

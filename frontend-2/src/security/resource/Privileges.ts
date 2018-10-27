@@ -1,3 +1,1 @@
-export enum Privilege {
-
-}
+export enum Privilege {}

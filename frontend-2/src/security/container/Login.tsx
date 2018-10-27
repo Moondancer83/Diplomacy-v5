@@ -6,7 +6,8 @@ import { connect } from "react-redux";
 import authenticationActionCreator from "../store/authenticationActionCreator";
 import "./login.css";
 import { ILoginRequest, LoginRequest } from "./LoginRequest";
-import Paper from '@material-ui/core/Paper/Paper';
+import Paper from "@material-ui/core/Paper/Paper";
+import style from "../../style/style";
 
 class Login extends React.Component<any, ILoginRequest> {
   public constructor(props: any) {
@@ -16,10 +17,12 @@ class Login extends React.Component<any, ILoginRequest> {
 
   public render() {
     return (
-      <Paper className={"overlay"}>
-        <Paper>
+      <Paper style={style.overlay}>
+        <Paper style={style.login.box}>
           <form>
-            <Typography variant="h2">Login</Typography>
+            <Typography variant="h2" align={"center"}>
+              Login
+            </Typography>
             <TextField
               id={"username"}
               required={true}
@@ -39,10 +42,18 @@ class Login extends React.Component<any, ILoginRequest> {
               value={this.state.password}
               fullWidth={true}
             />
-            <Button variant="contained" color="primary" onClick={this.login}>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={this.login}
+              fullWidth={true}
+            >
               Login
             </Button>
-            <Button onClick={this.reset}>Reset</Button>
+            <p />
+            <Button onClick={this.reset} fullWidth={true}>
+              Reset
+            </Button>
           </form>
         </Paper>
       </Paper>
