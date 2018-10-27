@@ -1,0 +1,29 @@
+{
+  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "linterOptions": {
+    "exclude": [
+      "config/**/*.js",
+      "node_modules/**/*.ts",
+      "coverage/lcov-report/*.js",
+      "src/core/registerServiceWorker.ts"
+    ]
+  },
+  "rules": {
+    "object-literal-sort-keys": false,
+    "ordered-imports": false,
+    "no-console": {
+      "severity": "warning"
+    },
+    "max-file-line-count":
+      {
+        "severity": "warning",
+        "options": [100]
+      }
+
+  },
+  "jsRules": {
+    "no-console": {
+      "severity": "warning"
+    }
+  }
+}
