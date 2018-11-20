@@ -28,4 +28,5 @@ public class RegionFacade {
     public List<RegionViewDTO> getRegions() {
         return Lists.transform((List<Region>) regionRepository.findAll(), regionEntityToViewDTOConverter::convert);
     }
+
 }

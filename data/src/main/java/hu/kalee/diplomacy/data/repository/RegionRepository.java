@@ -1,5 +1,7 @@
 package hu.kalee.diplomacy.data.repository;
 
+import java.util.List;
+
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 import hu.kalee.diplomacy.data.domain.Region;

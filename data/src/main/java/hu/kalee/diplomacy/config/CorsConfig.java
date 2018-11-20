@@ -13,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Configuration
 public class CorsConfig {
     private static final Logger LOG = LoggerFactory.getLogger(CorsConfig.class);
-    private static final String HTTP_LOCALHOST_4200 = "http://localhost:4200";
+    private static final String HTTP_LOCALHOST_4200 = "http://localhost:3000";
 
     @Bean
     public WebMvcConfigurer corsConfigurer() {

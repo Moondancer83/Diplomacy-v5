@@ -6,7 +6,7 @@ import Login from "./Login";
 
 export class Authentication extends React.Component<any, any> {
   public componentWillMount() {
-    this.props.login(undefined, undefined);
+    // this.props.login("admin", "admin");
   }
 
   public render() {
@@ -15,7 +15,7 @@ export class Authentication extends React.Component<any, any> {
 }
 
 const mapStateToProps = (state: any) => ({
-  isAuthenticated: authenticationSelector.isAuthenticated(state)
+  isAuthenticated: true || authenticationSelector.isAuthenticated(state)
 });
 const mapDispatchToProps = { login: authenticationActionCreator.login };
 

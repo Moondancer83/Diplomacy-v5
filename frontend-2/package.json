@@ -16,7 +16,7 @@
     "posttslint": "npm run prettier",
     "prettier": "prettier --write 'src/**/*{.ts,.tsx}'"
   },
-  "proxy": "http://localhost:8080",
+  "proxy": "http://localhost:9500",
   "dependencies": {
     "log4js": "^3.0.5",
     "react": "^16.5.2",

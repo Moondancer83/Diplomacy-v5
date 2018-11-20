@@ -16,6 +16,9 @@ const style = {
       width: 300,
       padding: 50
     }
+  },
+  overflow: {
+    overflow: "auto"
   }
 };
 
